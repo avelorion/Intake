@@ -107,7 +107,7 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
 
 <div class="header">
   <div class="badge">💬 Discovery Intake</div>
-  <div style="font-size:10px;color:var(--accent);font-weight:700;margin-bottom:6px;">⚡ v5.1</div>
+  <div style="font-size:10px;color:var(--accent);font-weight:700;margin-bottom:6px;">⚡ v5.2</div>
   <h1>Vertel ons je verhaal.</h1>
   <p>We passen ons aan op jouw situatie. Vooral tikken, bijna niet typen. ±5 minuten.</p>
 </div>
@@ -279,16 +279,16 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
     <div class="card">
       <div class="tag">Stap 3 — Je huidige tools</div>
       <h2>Wat gebruik je nu? 🖥️</h2>
-      <p class="sub">En wat vinden <em>jij en je klanten</em> ervan?</p>
+      <p class="sub">Hoe meer je deelt, hoe beter we snappen <em>wat er beter kan</em>.</p>
 
       <div class="field">
         <label>Welke software / tools gebruik je?</label>
         <div class="chips" data-name="sw_tools" data-multi="true">
           <div class="chip">Knipklok</div><div class="chip">Treatwell</div><div class="chip">Booksy</div>
-          <div class="chip">Salonized</div><div class="chip">SimplyBook</div><div class="chip">Square</div>
-          <div class="chip">Excel</div><div class="chip">WordPress</div><div class="chip">WhatsApp</div>
-          <div class="chip">Tikkie</div><div class="chip">Instagram</div><div class="chip">Pen & papier</div>
-          <div class="chip">Andere</div>
+          <div class="chip">Fresha</div><div class="chip">Salonized</div><div class="chip">SimplyBook</div>
+          <div class="chip">Square</div><div class="chip">Vagaro</div><div class="chip">Phorest</div>
+          <div class="chip">Excel</div><div class="chip">WhatsApp</div><div class="chip">Tikkie</div>
+          <div class="chip">Instagram</div><div class="chip">Pen & papier</div><div class="chip">Andere</div>
         </div>
       </div>
       <div class="field-row">
@@ -299,26 +299,79 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
           <div class="chips" data-name="sw_kosten"><div class="chip">< €25</div><div class="chip">€25-50</div><div class="chip">€50-100</div><div class="chip">€100+</div></div>
         </div>
       </div>
-      <div class="field"><label>Wat werkt WÉL goed? (behouden we)</label>
+
+      <div class="field"><label>Wat werkt WÉL goed? (dit behouden we)</label>
         <div class="chips" data-name="sw_werkt" data-multi="true">
           <div class="chip">📅 Agenda</div><div class="chip">📱 Online boeken</div><div class="chip">🔔 Herinneringen</div>
           <div class="chip">💳 Betalen</div><div class="chip">👤 Klantinfo</div><div class="chip">📊 Rapportages</div><div class="chip">🤷 Niks</div>
         </div>
       </div>
-      <div class="divider">── Wat vinden je klanten? ──</div>
-      <div class="field"><label>Wat hoor je terug van klanten?</label>
-        <div class="chips" data-name="sw_klant_feedback" data-multi="true">
-          <div class="chip">👍 Makkelijk te boeken</div><div class="chip">🤷 Geen klachten</div><div class="chip">😕 Vinden het verwarrend</div>
-          <div class="chip">👴 Ziet er oud uit</div><div class="chip">💳 Willen online betalen</div><div class="chip">📱 App werkt niet lekker</div>
-          <div class="chip">📞 Bellen/appen liever</div><div class="chip">🤔 Weet ik eigenlijk niet</div>
+
+      <div class="divider">── Je bedrijf ──</div>
+
+      <div class="field-row">
+        <div class="field"><label>Hoeveel stoelen / werkplekken?</label>
+          <div class="chips" data-name="sw_stoelen"><div class="chip">1</div><div class="chip">2-3</div><div class="chip">4-6</div><div class="chip">6+</div></div>
+        </div>
+        <div class="field"><label>Klanten per dag?</label>
+          <div class="chips" data-name="sw_klanten_dag"><div class="chip">< 5</div><div class="chip">5-10</div><div class="chip">10-20</div><div class="chip">20+</div></div>
         </div>
       </div>
+
+      <div class="field"><label>Gemiddelde behandelprijs?</label>
+        <div class="chips" data-name="sw_gem_prijs"><div class="chip">€10-20</div><div class="chip">€20-30</div><div class="chip">€30-45</div><div class="chip">€45+</div></div>
+      </div>
+
+      <div class="field"><label>Hoe boeken klanten nu? (alles dat past)</label>
+        <div class="chips" data-name="sw_boek_methode" data-multi="true">
+          <div class="chip">📱 Via de app/site</div><div class="chip">💬 WhatsApp</div><div class="chip">📞 Bellen</div>
+          <div class="chip">📸 Instagram DM</div><div class="chip">🚶 Walk-in</div><div class="chip">🔁 Vaste afspraak</div>
+        </div>
+      </div>
+
+      <div class="field"><label>Walk-in vs afspraak?</label>
+        <div class="chips" data-name="sw_walkin"><div class="chip">Vooral walk-in</div><div class="chip">50/50</div><div class="chip">Vooral afspraak</div><div class="chip">Alleen afspraak</div></div>
+      </div>
+
+      <div class="divider">── Wat vinden je klanten? ──</div>
+
+      <div class="field"><label>Wat hoor je terug van klanten over het boeken?</label>
+        <div class="chips" data-name="sw_klant_feedback" data-multi="true">
+          <div class="chip">👍 Makkelijk</div><div class="chip">🤷 Geen klachten</div><div class="chip">😕 Verwarrend</div>
+          <div class="chip">👴 Ziet er oud uit</div><div class="chip">💳 Willen online betalen</div><div class="chip">📱 App werkt niet lekker</div>
+          <div class="chip">🔄 Kunnen niet omboeken</div><div class="chip">📞 Bellen/appen liever</div><div class="chip">🤔 Weet ik niet</div>
+        </div>
+      </div>
+
       <div class="field"><label>Wat maakt boeken makkelijk voor klanten?</label>
         <div class="chips" data-name="sw_klant_easy" data-multi="true">
           <div class="chip">📱 Goed op telefoon</div><div class="chip">⚡ Weinig stappen</div><div class="chip">💳 Meteen betalen</div>
-          <div class="chip">🔔 Herinnering krijgen</div><div class="chip">🔄 Zelf verzetten</div><div class="chip">🌐 Geen app download nodig</div>
-          <div class="chip">⭐ Mooie uitstraling</div>
+          <div class="chip">🔔 Herinnering krijgen</div><div class="chip">🔄 Zelf verzetten</div><div class="chip">🌐 Geen app nodig</div>
+          <div class="chip">💬 WhatsApp bevestiging</div><div class="chip">🕐 Beschikbaarheid zien</div><div class="chip">⭐ Mooie uitstraling</div>
         </div>
+      </div>
+
+      <div class="divider">── Verkoop je producten? ──</div>
+
+      <div class="field"><label>Verkoop je producten naast je diensten?</label>
+        <div class="chips" data-name="sw_producten">
+          <div class="chip">✅ Ja, in de zaak</div><div class="chip">🌐 Ja, ook online</div>
+          <div class="chip">💭 Nee, maar wil ik wel</div><div class="chip">🚫 Nee</div>
+        </div>
+      </div>
+      <div class="field"><label>Wat voor producten?</label>
+        <div class="chips" data-name="sw_product_type" data-multi="true">
+          <div class="chip">💇 Haarstyling (pomade, wax, gel)</div>
+          <div class="chip">🧔 Baardproducten</div>
+          <div class="chip">🧴 Shampoo / verzorging</div>
+          <div class="chip">🧖 Huidverzorging</div>
+          <div class="chip">💈 Eigen merk producten</div>
+          <div class="chip">🚫 Geen producten</div>
+        </div>
+      </div>
+
+      <div class="insight" id="sw_insight_3" style="display:none">
+        <strong>📊 Goed bezig!</strong> <span id="sw_insight_3_text"></span>
       </div>
     </div>
   </div>
@@ -671,28 +724,129 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
   <!-- SOFTWARE -->
   <div class="branch" data-path="software">
     <div class="card">
-      <div class="tag">Stap 4 — Wat gaat mis?</div>
-      <h2>De frustraties 😤</h2>
-      <p class="sub">Tik aan wat je herkent.</p>
-      <div class="field"><label>Hoe erg stoort het je?</label>
+      <div class="tag">Stap 4 — Wat kan beter?</div>
+      <h2>De frustraties & wensen 😤</h2>
+      <p class="sub">Hoe meer je aantikt, hoe preciezer we snappen wat je nodig hebt. <em>Alles telt.</em></p>
+
+      <div class="field"><label>Hoe gefrustreerd ben je met je huidige software?</label>
         <div class="pain-row" data-name="sw_frustratie"><div class="pain-btn" data-value="mild" onclick="pickPain(this)"><span class="p-emoji">😌</span><span class="p-text">Valt mee</span></div><div class="pain-btn" data-value="irritant" onclick="pickPain(this)"><span class="p-emoji">😐</span><span class="p-text">Irritant</span></div><div class="pain-btn" data-value="erg" onclick="pickPain(this)"><span class="p-emoji">😠</span><span class="p-text">Erg</span></div><div class="pain-btn" data-value="klaar" onclick="pickPain(this)"><span class="p-emoji">🤬</span><span class="p-text">Klaar mee</span></div></div>
       </div>
-      <div class="field"><label>Wat klopt niet?</label>
+
+      <div class="field"><label>Wat klopt niet aan je huidige systeem?</label>
         <div class="chips" data-name="sw_problemen" data-multi="true">
-          <div class="chip">👴 Verouderd / lelijk</div><div class="chip">🐌 Traag</div><div class="chip">💸 Te duur</div>
-          <div class="chip">📱 Slecht op mobiel</div><div class="chip">🔗 Koppelt niet</div><div class="chip">📞 Slechte support</div>
-          <div class="chip">🔒 Geen controle</div><div class="chip">🐛 Bugs</div><div class="chip">📊 Slechte rapportages</div>
+          <div class="chip">👴 Verouderd / lelijk design</div><div class="chip">🐌 Traag / crasht</div><div class="chip">💸 Te duur voor wat het doet</div>
+          <div class="chip">📱 Slecht op mobiel</div><div class="chip">🔗 Koppelt nergens mee</div><div class="chip">📞 Slechte support</div>
+          <div class="chip">🔒 Geen controle / flexibiliteit</div><div class="chip">🐛 Bugs / fouten</div><div class="chip">📊 Slechte rapportages</div>
+          <div class="chip">🤯 Te ingewikkeld</div><div class="chip">💰 Verborgen kosten / commissie</div>
         </div>
       </div>
-      <div class="field"><label>Functies die je mist</label>
-        <div class="chips" data-name="sw_missend" data-multi="true">
-          <div class="chip">💳 Vooraf betalen</div><div class="chip">🚫 No-show blokkeren</div><div class="chip">📲 Telefoon-verificatie</div>
-          <div class="chip">🗺️ Maps koppeling</div><div class="chip">📸 Portfolio</div><div class="chip">📱 Social media</div>
-          <div class="chip">⏰ Flexibele prijzen</div><div class="chip">📊 Rapportages</div><div class="chip">⭐ Reviews</div>
-          <div class="chip">👤 Klanthistorie</div><div class="chip">📅 Vaste klanten planning</div><div class="chip">🔔 Herinneringen</div>
-          <div class="chip">🎁 Loyaliteit</div><div class="chip">🛒 Producten verkopen</div><div class="chip">⏱️ Tijd per behandeling</div>
-          <div class="chip">🕐 Instelbare tijden</div><div class="chip">🗓️ Maandoverzicht</div><div class="chip">⬆️ Premium listing</div>
+
+      <div class="divider">── Functies die je mist ──</div>
+
+      <div class="field"><label>Boekingen & klanten</label>
+        <div class="chips" data-name="sw_miss_boekingen" data-multi="true">
+          <div class="chip">💳 Vooraf betalen / deposit</div>
+          <div class="chip">🚫 No-shows blokkeren / herkennen</div>
+          <div class="chip">📲 Telefoon-verificatie klanten</div>
+          <div class="chip">🔔 Auto-herinneringen (SMS/WhatsApp)</div>
+          <div class="chip">📅 Vaste klanten auto-plannen</div>
+          <div class="chip">🕐 Instelbare boekingstijden</div>
+          <div class="chip">👤 Klanthistorie / laatste bezoek</div>
+          <div class="chip">🔄 Klant kan zelf omboeken</div>
+          <div class="chip">⏱️ Tijd per behandeling bijhouden</div>
+          <div class="chip">⏰ Avondtarief / flexibele prijzen</div>
+          <div class="chip">🚶 Wachtrij / walk-in management</div>
+          <div class="chip">🤖 AI die drukke momenten voorspelt</div>
         </div>
+      </div>
+
+      <div class="field"><label>Zichtbaarheid & marketing</label>
+        <div class="chips" data-name="sw_miss_marketing" data-multi="true">
+          <div class="chip">📸 Portfolio / foto pagina</div>
+          <div class="chip">📱 Social media koppeling</div>
+          <div class="chip">🗺️ Google Maps / Waze</div>
+          <div class="chip">🏪 "In de buurt" vindbaarheid</div>
+          <div class="chip">⭐ Reviews verzamelen & tonen</div>
+          <div class="chip">📧 Marketing berichten / acties</div>
+          <div class="chip">⬆️ Uitgelicht / premium listing</div>
+          <div class="chip">🌐 Eigen website / landingspagina</div>
+          <div class="chip">🤖 AI aanbevelingen voor klanten</div>
+        </div>
+      </div>
+
+      <div class="field"><label>Bedrijf & geld</label>
+        <div class="chips" data-name="sw_miss_business" data-multi="true">
+          <div class="chip">📊 Maand- en dagrapportages</div>
+          <div class="chip">🗓️ Maandoverzicht alle klanten</div>
+          <div class="chip">🎁 Loyaliteitsprogramma</div>
+          <div class="chip">🛒 Producten verkopen (in-app)</div>
+          <div class="chip">📦 Voorraadbeheer</div>
+          <div class="chip">👥 Medewerker-planning & prestaties</div>
+          <div class="chip">💰 Kassasysteem / POS</div>
+          <div class="chip">📊 Omzet per barber / stoel</div>
+          <div class="chip">🏪 Multi-locatie beheer</div>
+        </div>
+      </div>
+
+      <div class="field"><label>Mis je nog iets? (optioneel)</label>
+        <textarea name="sw_extra_missend" rows="2" placeholder="Alles wat hierboven niet stond"></textarea>
+      </div>
+
+      <div class="divider">── No-shows & verlies ──</div>
+
+      <div class="field">
+        <div class="counter-row">
+          <div class="c-label">No-shows per week<span class="c-sub">Klanten die niet komen opdagen</span></div>
+          <div class="counter-controls">
+            <button class="c-btn" onclick="cnt(this,-1)">−</button>
+            <span class="c-val" data-name="sw_noshows">0</span>
+            <button class="c-btn" onclick="cnt(this,1)">+</button>
+          </div>
+        </div>
+        <div class="counter-row">
+          <div class="c-label">Te laat per week<span class="c-sub">Klanten die niet op tijd komen</span></div>
+          <div class="counter-controls">
+            <button class="c-btn" onclick="cnt(this,-1)">−</button>
+            <span class="c-val" data-name="sw_telaat">0</span>
+            <button class="c-btn" onclick="cnt(this,1)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="sw_roi_box" class="insight" style="display:none">
+        <strong>📊 Even rekenen:</strong> <span id="sw_roi_text"></span>
+      </div>
+
+      <div class="divider">── De concurrentie ──</div>
+
+      <div class="field"><label>Ken je andere barbershop-software naast wat je nu gebruikt?</label>
+        <div class="chips" data-name="sw_kent_concurrent" data-multi="true">
+          <div class="chip">Fresha</div><div class="chip">Booksy</div><div class="chip">Treatwell</div>
+          <div class="chip">Vagaro</div><div class="chip">Salonized</div><div class="chip">Square</div>
+          <div class="chip">Geen / ken ik niet</div>
+        </div>
+      </div>
+
+      <div class="field"><label>Wat doen andere kappers / barbers in de buurt beter online?</label>
+        <div class="chips" data-name="sw_concurrent_beter" data-multi="true">
+          <div class="chip">🌐 Betere website</div><div class="chip">📱 Betere app</div>
+          <div class="chip">📸 Mooier portfolio</div><div class="chip">⭐ Meer reviews</div>
+          <div class="chip">💳 Makkelijker betalen</div><div class="chip">🗺️ Beter vindbaar</div>
+          <div class="chip">📱 Actiever op social</div><div class="chip">🤷 Niks eigenlijk</div>
+        </div>
+      </div>
+
+      <div class="field"><label>Wat maakt JOU beter dan de rest?</label>
+        <div class="chips" data-name="sw_eigen_kracht" data-multi="true">
+          <div class="chip">✂️ Beter vakmanschap</div><div class="chip">😊 Betere sfeer / service</div>
+          <div class="chip">💰 Betere prijs</div><div class="chip">📍 Betere locatie</div>
+          <div class="chip">🕐 Flexibelere tijden</div><div class="chip">🔥 Sterker merk</div>
+          <div class="chip">👥 Trouwe klantenkring</div>
+        </div>
+      </div>
+
+      <div class="insight" id="sw_insight_4" style="display:none">
+        <strong>🔥 Je hebt al <span id="sw_data_count">0</span> inzichten gedeeld.</strong> Hoe meer je deelt, hoe beter we een oplossing kunnen bouwen die precies past bij jouw zaak.
       </div>
     </div>
   </div>
@@ -1195,14 +1349,41 @@ document.querySelectorAll('.chips').forEach(g=>{
     c.addEventListener('click',()=>{
       if(multi){if(!c.classList.contains('selected')&&[...g.querySelectorAll('.chip.selected')].length>=max)return;c.classList.toggle('selected');}
       else{g.querySelectorAll('.chip').forEach(x=>x.classList.remove('selected'));c.classList.toggle('selected');}
+      updateDataCount();calcSwROI();
     });
   });
 });
 
-function pickOpt(el){el.closest('.options').querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));el.classList.toggle('selected');}
-function pickPain(el){el.closest('.pain-row').querySelectorAll('.pain-btn').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');}
+function pickOpt(el){el.closest('.options').querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));el.classList.toggle('selected');updateDataCount();}
+function pickPain(el){el.closest('.pain-row').querySelectorAll('.pain-btn').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');updateDataCount();}
 function setMeter(dot){const row=dot.closest('.meter-dots');const v=parseInt(dot.dataset.v);row.querySelectorAll('.meter-dot').forEach(d=>{d.classList.toggle('active',parseInt(d.dataset.v)<=v);});}
-function cnt(btn,dir){const w=btn.closest('.counter-controls');const v=w.querySelector('.c-val');let n=parseInt(v.textContent)+dir;if(n<0)n=0;if(n>50)n=50;v.textContent=n;}
+function cnt(btn,dir){const w=btn.closest('.counter-controls');const v=w.querySelector('.c-val');let n=parseInt(v.textContent)+dir;if(n<0)n=0;if(n>50)n=50;v.textContent=n;calcSwROI();updateDataCount();}
+
+function calcSwROI(){
+  const ns=parseInt(document.querySelector('.c-val[data-name="sw_noshows"]')?.textContent||'0');
+  const pc=document.querySelector('[data-name="sw_gem_prijs"] .chip.selected');
+  if(!ns||!pc){document.getElementById('sw_roi_box').style.display='none';return;}
+  const pm={'€10-20':15,'€20-30':25,'€30-45':37.5,'€45+':50};
+  const p=pm[pc.textContent.replace('✓ ','')]||25;
+  const m=ns*p*4.3;const y=m*12;
+  document.getElementById('sw_roi_box').style.display='block';
+  document.getElementById('sw_roi_text').textContent=`${ns} no-shows/week × €${p.toFixed(0)} = ~€${Math.round(m)}/maand verlies (€${Math.round(y).toLocaleString()}/jaar). Dat is wat een goed systeem je terugverdient.`;
+}
+
+function updateDataCount(){
+  const all=document.querySelectorAll('.branch[data-path="software"] .chip.selected');
+  const counters=document.querySelectorAll('.branch[data-path="software"] .c-val');
+  let count=all.length;
+  counters.forEach(c=>{if(parseInt(c.textContent)>0)count++;});
+  const texts=document.querySelectorAll('.branch[data-path="software"] textarea');
+  texts.forEach(t=>{if(t.value.trim())count++;});
+  const pain=document.querySelectorAll('.branch[data-path="software"] .pain-btn.selected');
+  count+=pain.length;
+  const el=document.getElementById('sw_data_count');
+  const box=document.getElementById('sw_insight_4');
+  if(el)el.textContent=count;
+  if(box)box.style.display=count>3?'block':'none';
+}
 
 function gather(){
   const d={};
@@ -1222,6 +1403,9 @@ function gather(){
   document.querySelectorAll('.step > .card .meter-dots').forEach(g=>{const a=[...g.querySelectorAll('.meter-dot.active')];if(a.length)d[g.dataset.name]=a.length+'/5';});
   // Counters
   document.querySelectorAll('.branch.show .c-val').forEach(v=>{if(parseInt(v.textContent)>0)d[v.dataset.name]=v.textContent+' per week';});
+  // ROI
+  const swRoi=document.getElementById('sw_roi_text');
+  if(swRoi&&swRoi.textContent)d.sw_roi=swRoi.textContent;
   // Path
   if(userPath)d._pad=userPath;
   return d;
@@ -1251,8 +1435,9 @@ function buildSummary(){
   // Group nicely
   const groups=[
     {t:'👤 Contact',k:['naam','telefoon','email','bedrijf','vak','leeftijd','vrije_tijd','een_ding','gedoe']},
-    {t:'🖥️ Huidige software',k:['sw_tools','sw_duur','sw_kosten','sw_werkt','sw_klant_feedback','sw_klant_easy']},
-    {t:'😤 Frustraties',k:['sw_frustratie','sw_problemen','sw_missend']},
+    {t:'🖥️ Huidige software',k:['sw_tools','sw_duur','sw_kosten','sw_werkt','sw_stoelen','sw_klanten_dag','sw_gem_prijs','sw_boek_methode','sw_walkin','sw_klant_feedback','sw_klant_easy','sw_producten','sw_product_type']},
+    {t:'😤 Frustraties & wensen',k:['sw_frustratie','sw_problemen','sw_miss_boekingen','sw_miss_marketing','sw_miss_business','sw_extra_missend','sw_noshows','sw_telaat','sw_roi']},
+    {t:'👀 Concurrentie',k:['sw_kent_concurrent','sw_concurrent_beter','sw_eigen_kracht']},
     {t:'🚀 Starten',k:['start_wat','start_huidig_werk','start_skill_level','start_ervaring','start_naast_werk','start_inkomen','start_blokkades','start_klanten','start_drive','start_kracht','start_bijverdienste','start_startkapitaal','start_doel_inkomen','start_hulp','start_droom']},
     {t:'🔧 Probleem',k:['prob_type','prob_beschrijving','prob_duur','prob_geprobeerd','prob_professional','prob_bedragen','prob_data','prob_tech','prob_urgentie','prob_financieel','prob_deadline','prob_oplossing']},
     {t:'🎨 Creatief',k:['cr_type','cr_pijn','cr_kosten','cr_kosten_waar','cr_bereikt','cr_releases','cr_platformen','cr_genre','cr_productie','cr_mix_kosten','cr_urgentie','cr_top_frustratie','cr_hulp']},
