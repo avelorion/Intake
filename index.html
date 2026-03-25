@@ -107,7 +107,7 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
 
 <div class="header">
   <div class="badge">💬 Discovery Intake</div>
-  <div style="font-size:10px;color:var(--accent);font-weight:700;margin-bottom:6px;">⚡ v4.7</div>
+  <div style="font-size:10px;color:var(--accent);font-weight:700;margin-bottom:6px;">⚡ v5.1</div>
   <h1>Vertel ons je verhaal.</h1>
   <p>We passen ons aan op jouw situatie. Vooral tikken, bijna niet typen. ±5 minuten.</p>
 </div>
@@ -179,6 +179,19 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
         <div class="chip">🧠 Motivatie / richting</div>
         <div class="chip">📦 Iets starten maar weet niet hoe</div>
         <div class="chip">😌 Eigenlijk niks</div>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field"><label>Leeftijd</label>
+        <div class="chips" data-name="leeftijd">
+          <div class="chip">< 20</div><div class="chip">20-30</div><div class="chip">30-45</div><div class="chip">45-60</div><div class="chip">60+</div>
+        </div>
+      </div>
+      <div class="field"><label>Hoeveel vrije tijd heb je per week?</label>
+        <div class="chips" data-name="vrije_tijd">
+          <div class="chip">Bijna niks</div><div class="chip">1-5 uur</div><div class="chip">5-15 uur</div><div class="chip">Veel</div>
+        </div>
       </div>
     </div>
   </div>
@@ -314,19 +327,25 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
   <div class="branch" data-path="starten">
     <div class="card">
       <div class="tag">Stap 3 — Jouw startpunt</div>
-      <h2>Waar sta je nu? 🚀</h2>
+      <h2 id="start_h2">Waar sta je nu? 🚀</h2>
       <p class="sub">Vertel over je huidige situatie en <em>wat je wilt opbouwen</em>.</p>
 
       <div class="field"><label>Wat wil je starten?</label>
         <div class="chips" data-name="start_wat" data-multi="true">
-          <div class="chip">🔨 Mijn huidige vak, maar voor mezelf</div>
+          <div class="chip" id="start_vak_chip">🔨 Mijn huidige vak, maar voor mezelf</div>
           <div class="chip">🏢 Eigen bedrijf (ander vak)</div><div class="chip">📦 Freelancen / ZZP</div><div class="chip">🌐 Online business</div>
           <div class="chip">📱 App / platform</div><div class="chip">🛒 Webshop</div><div class="chip">🎨 Creatief project</div>
           <div class="chip">💡 Weet nog niet precies</div>
         </div>
       </div>
-      <div class="field"><label>Wat doe je nu voor werk?</label>
+      <div class="field"><label id="start_werk_label">Wat doe je nu voor werk?</label>
         <input type="text" name="start_huidig_werk" placeholder="Bijv: dakdekker in loondienst, kapper bij een salon...">
+      </div>
+      <div class="field"><label>Hoeveel ervaring heb je?</label>
+        <div class="chips" data-name="start_ervaring">
+          <div class="chip">< 1 jaar</div><div class="chip">1-3 jaar</div>
+          <div class="chip">3-5 jaar</div><div class="chip">5-10 jaar</div><div class="chip">10+ jaar</div>
+        </div>
       </div>
       <div class="field"><label>Hoe goed ben je in wat je doet?</label>
         <div class="chips" data-name="start_skill_level">
@@ -401,7 +420,28 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
         <div class="chips" data-name="prob_geprobeerd" data-multi="true">
           <div class="chip">🔍 Zelf gegoogled</div><div class="chip">💬 Gevraagd aan bekenden</div>
           <div class="chip">👔 Professional gesproken</div><div class="chip">🤖 AI gevraagd</div>
-          <div class="chip">📞 Belastingdienst gebeld</div><div class="chip">🤷 Niks nog</div>
+          <div class="chip">📞 Instantie gebeld</div><div class="chip">🤷 Niks nog</div>
+        </div>
+      </div>
+      <div class="field"><label>Heb je een professional die je helpt?</label>
+        <div class="chips" data-name="prob_professional">
+          <div class="chip">👔 Ja, boekhouder</div><div class="chip">⚖️ Ja, advocaat</div>
+          <div class="chip">📊 Ja, adviseur</div><div class="chip">🚫 Nee</div>
+          <div class="chip">💸 Ja maar te duur</div><div class="chip">😕 Ja maar niet tevreden</div>
+        </div>
+      </div>
+      <div class="field"><label>Over welke bedragen gaat het (bij benadering)?</label>
+        <div class="chips" data-name="prob_bedragen">
+          <div class="chip">< €1.000</div><div class="chip">€1.000-5.000</div>
+          <div class="chip">€5.000-25.000</div><div class="chip">€25.000-100.000</div>
+          <div class="chip">€100.000+</div><div class="chip">Weet ik niet</div>
+        </div>
+      </div>
+      <div class="field"><label>Heb je data of documenten over dit probleem?</label>
+        <div class="chips" data-name="prob_data" data-multi="true">
+          <div class="chip">📄 Ja, papieren / brieven</div><div class="chip">📊 Ja, spreadsheets</div>
+          <div class="chip">📧 Ja, e-mails</div><div class="chip">🖥️ Ja, online portal</div>
+          <div class="chip">📱 Ja, in een app</div><div class="chip">🤷 Nee / weet niet</div>
         </div>
       </div>
       <div class="field"><label>Hoe technisch ben je?</label>
@@ -462,6 +502,37 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
           <div class="chip">📰 Media aandacht</div><div class="chip">🆕 Net begonnen</div>
         </div>
       </div>
+      <div class="field"><label>Hoeveel breng je uit per jaar?</label>
+        <div class="chips" data-name="cr_releases">
+          <div class="chip">🚫 Nog niks</div><div class="chip">1-3 releases</div>
+          <div class="chip">4-10 releases</div><div class="chip">10+</div>
+        </div>
+      </div>
+      <div class="field"><label>Op welke platformen?</label>
+        <div class="chips" data-name="cr_platformen" data-multi="true">
+          <div class="chip">🎵 Spotify</div><div class="chip">🍎 Apple Music</div>
+          <div class="chip">📺 YouTube</div><div class="chip">📸 Instagram</div>
+          <div class="chip">🎵 TikTok</div><div class="chip">☁️ SoundCloud</div>
+          <div class="chip">🛒 Beatstars</div><div class="chip">🌐 Eigen site</div>
+          <div class="chip">🚫 Nog nergens</div>
+        </div>
+      </div>
+      <div class="field"><label>Genre / stijl (in je eigen woorden)</label>
+        <input type="text" name="cr_genre" placeholder="Bijv: hiphop, lo-fi, techno, singer-songwriter...">
+      </div>
+      <div class="field"><label>Hoe maak je je werk?</label>
+        <div class="chips" data-name="cr_productie" data-multi="true">
+          <div class="chip">🎛️ Zelf produceren</div><div class="chip">🤝 Samen met producer</div>
+          <div class="chip">💸 Alles uitbesteden</div><div class="chip">🎤 Alleen vocals / performance</div>
+          <div class="chip">🆕 Wil beginnen</div>
+        </div>
+      </div>
+      <div class="field"><label>Wat kost een mix/master je per track?</label>
+        <div class="chips" data-name="cr_mix_kosten">
+          <div class="chip">Doe ik zelf</div><div class="chip">< €50</div>
+          <div class="chip">€50-150</div><div class="chip">€150-400</div><div class="chip">€400+</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -518,6 +589,21 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
       <div class="field"><label>Wat studeer of doe je?</label>
         <input type="text" name="ontd_studie" placeholder="Bijv: Master Communication Science">
       </div>
+      <div class="field"><label>Als je studeert — in welke fase zit je?</label>
+        <div class="chips" data-name="ontd_studie_fase">
+          <div class="chip">📚 Eerste jaren</div><div class="chip">📖 Halverwege</div>
+          <div class="chip">📝 Afstuderen / thesis</div><div class="chip">🎓 Bijna klaar</div>
+          <div class="chip">🚫 Ik studeer niet</div>
+        </div>
+      </div>
+      <div class="field"><label>Waar besteed je de meeste tijd aan?</label>
+        <div class="chips" data-name="ontd_tijdbesteding" data-multi="true">
+          <div class="chip">📖 Lezen / literatuur</div><div class="chip">✍️ Papers / verslagen</div>
+          <div class="chip">📊 Onderzoek / data</div><div class="chip">🤝 Groepswerk</div>
+          <div class="chip">📱 Social media</div><div class="chip">💼 Bijbaan</div>
+          <div class="chip">🎨 Hobby's / creatief</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -536,12 +622,30 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
           <div class="chip">🤷 Wisselend</div>
         </div>
       </div>
-      <div class="field"><label>Gebruik je apps of software voor je werk/studie?</label>
-        <div class="chips" data-name="geen_apps" data-multi="true">
-          <div class="chip">📱 Social media</div><div class="chip">📧 E-mail</div>
-          <div class="chip">📝 Notities / docs</div><div class="chip">📊 Spreadsheets</div>
-          <div class="chip">📅 Agenda</div><div class="chip">💬 WhatsApp / chat</div>
-          <div class="chip">🤖 AI tools</div><div class="chip">🚫 Bijna niks</div>
+      <div class="field"><label id="geen_tools_label">Gebruik je software of apps voor je werk?</label>
+        <div class="hint" id="geen_tools_hint">Bijv: boekingssysteem, planning, administratie, kassa</div>
+        <div class="chips" data-name="geen_werk_tools" data-multi="true">
+          <div class="chip">📅 Boekings- / planningssysteem</div>
+          <div class="chip">💳 Kassa / betaalsysteem</div>
+          <div class="chip">📊 Administratie / boekhouding</div>
+          <div class="chip">📱 Social media voor werk</div>
+          <div class="chip">💬 WhatsApp voor klanten</div>
+          <div class="chip">🌐 Website</div>
+          <div class="chip">📧 E-mail marketing</div>
+          <div class="chip">🤖 AI tools</div>
+          <div class="chip">📝 Excel / spreadsheets</div>
+          <div class="chip">🚫 Niks eigenlijk</div>
+        </div>
+      </div>
+      <div class="field"><label>Welke specifiek? (naam van de app/software)</label>
+        <input type="text" name="geen_tool_naam" placeholder="Bijv: Knipklok, Treatwell, Exact, Mollie, Canva...">
+      </div>
+      <div class="field"><label>Ben je blij met je huidige tools?</label>
+        <div class="chips" data-name="geen_tools_tevreden">
+          <div class="chip">😊 Ja, prima</div>
+          <div class="chip">😐 Gaat wel</div>
+          <div class="chip">😤 Nee, niet tevreden</div>
+          <div class="chip">🤷 Nooit over nagedacht</div>
         </div>
       </div>
       <div class="field"><label>Hoe technisch ben je?</label>
@@ -609,6 +713,24 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
           <div class="chip">💰 Financieel stabiel</div><div class="chip">⏰ Flexibele tijd</div>
         </div>
       </div>
+      <div class="field"><label>Verdien je al iets naast je vaste werk?</label>
+        <div class="chips" data-name="start_bijverdienste">
+          <div class="chip">🚫 Nee, niks</div><div class="chip">🤏 Beetje, < €500/mnd</div>
+          <div class="chip">📈 Redelijk, €500-1500/mnd</div><div class="chip">💰 Goed, €1500+/mnd</div>
+        </div>
+      </div>
+      <div class="field"><label>Heb je geld opzij om te investeren in een start?</label>
+        <div class="chips" data-name="start_startkapitaal">
+          <div class="chip">🚫 Nee, niks</div><div class="chip">🤏 < €1.000</div>
+          <div class="chip">💰 €1.000-5.000</div><div class="chip">💎 €5.000+</div>
+        </div>
+      </div>
+      <div class="field"><label>Wat wil je verdienen als het draait?</label>
+        <div class="chips" data-name="start_doel_inkomen">
+          <div class="chip">€2.000-3.000/mnd</div><div class="chip">€3.000-5.000/mnd</div>
+          <div class="chip">€5.000-10.000/mnd</div><div class="chip">€10.000+/mnd</div>
+        </div>
+      </div>
       <div class="field"><label>Waar heb je hulp bij nodig?</label>
         <div class="chips" data-name="start_hulp" data-multi="true">
           <div class="chip">📋 KvK / administratie</div><div class="chip">📢 Klanten vinden / werven</div>
@@ -616,6 +738,7 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
           <div class="chip">📋 Verzekeringen</div><div class="chip">📊 Businessplan</div>
           <div class="chip">📱 Social media</div><div class="chip">🤝 Mentorship / advies</div>
           <div class="chip">⚖️ Juridisch</div><div class="chip">🧠 Mindset / durf</div>
+          <div class="chip">💰 Pricing bepalen</div><div class="chip">📄 Offertes / contracten</div>
         </div>
       </div>
       <div class="field"><label>Hoe ziet je droomscenario eruit?</label>
@@ -737,7 +860,7 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
   <div class="branch" data-path="geen">
     <div class="card">
       <div class="tag">Stap 4 — Je dagelijks leven</div>
-      <h2>Herken je iets hiervan? 🔍</h2>
+      <h2 id="geen_h2_s4">Herken je iets hiervan? 🔍</h2>
       <p class="sub">Soms zitten er dingen in je dagelijks leven die beter kunnen <em>zonder dat je het doorhebt</em>.</p>
 
       <div class="field"><label>Waar ben je weleens tijd aan kwijt?</label>
@@ -748,21 +871,26 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
           <div class="chip">📊 Overzicht bijhouden</div>
           <div class="chip">⏰ Herhaalwerk</div>
           <div class="chip">✍️ Schrijven / verslagen</div>
+          <div class="chip">👥 Klanten managen</div>
+          <div class="chip">📅 Planning / agenda</div>
           <div class="chip">🤷 Niks eigenlijk</div>
         </div>
       </div>
-      <div class="field"><label>Zijn er dingen die je irriteren aan hoe iets nu werkt?</label>
+      <div class="field"><label id="geen_irr_label">Zijn er dingen die je irriteren aan hoe iets nu werkt?</label>
         <div class="chips" data-name="geen_irritatie" data-multi="true">
           <div class="chip">📱 Apps die niet samenwerken</div>
           <div class="chip">💸 Ergens te veel voor betalen</div>
           <div class="chip">🤯 Iets dat onnodig ingewikkeld is</div>
           <div class="chip">⏰ Iets dat te lang duurt</div>
           <div class="chip">📞 Slechte service ergens</div>
+          <div class="chip">🖥️ Mijn software mist functies</div>
+          <div class="chip">👴 Mijn systeem ziet er oud uit</div>
+          <div class="chip">📊 Geen goed overzicht van mijn zaken</div>
           <div class="chip">😌 Nee, alles prima</div>
         </div>
       </div>
-      <div class="field"><label>Als je een toverstaf had, wat zou je veranderen?</label>
-        <textarea name="geen_toverstaf" rows="2" placeholder="Helemaal vrij — groot of klein"></textarea>
+      <div class="field"><label>Als je iets kon verbeteren aan je huidige manier van werken, wat dan?</label>
+        <textarea name="geen_toverstaf" rows="2" placeholder="Bijv: makkelijker klanten inplannen, beter overzicht van mijn inkomsten, minder gerommel met betalen..."></textarea>
       </div>
     </div>
   </div>
@@ -774,14 +902,16 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
 </div>
 
 <!-- ════════════════════════════════════
-     STAP 5: WAT WIL JE BEREIKEN (universal, taal aangepast)
+     STAP 5: DOELEN / DROMEN
      ════════════════════════════════════ -->
 <div class="step" data-step="5">
+
+  <!-- NORMAL PATHS -->
+  <div class="branch" data-path="software">
   <div class="card">
     <div class="tag">Stap 5 — Doelen</div>
-    <h2 id="doelH2">Wat wil je bereiken? 🏆</h2>
-    <p class="sub" id="doelSub">Kies je belangrijkste doel.</p>
-
+    <h2>Wat wil je bereiken? 🏆</h2>
+    <p class="sub">Kies je belangrijkste doel.</p>
     <div class="field"><label>Mijn #1 doel is...</label>
       <div class="options" data-name="doel">
         <div class="option" data-value="geld" onclick="pickOpt(this)"><span class="o-icon">💰</span><span class="o-text">Meer verdienen / kosten besparen</span></div>
@@ -792,7 +922,6 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
         <div class="option" data-value="starten" onclick="pickOpt(this)"><span class="o-icon">🏁</span><span class="o-text">Gewoon starten / eerste stap</span></div>
       </div>
     </div>
-
     <div class="field"><label>Hoe weet je of het gelukt is?</label>
       <div class="chips" data-name="succes" data-multi="true">
         <div class="chip">📈 Meer klanten/bereik</div><div class="chip">💰 Meer omzet</div>
@@ -801,21 +930,68 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
         <div class="chip">🧠 Meer kennis/inzicht</div><div class="chip">🏁 Het draait gewoon</div>
       </div>
     </div>
-
     <div class="field"><label>Wanneer wil je resultaat zien?</label>
       <div class="chips" data-name="wanneer">
         <div class="chip">🔥 Zo snel mogelijk</div><div class="chip">📅 1-2 maanden</div>
         <div class="chip">🗓️ 3-6 maanden</div><div class="chip">🧘 Geen haast</div>
       </div>
     </div>
-
     <div class="field"><label>Harde deadline? (optioneel)</label>
       <input type="text" name="deadline" placeholder="Bijv: 1 juni opening, belastingaangifte april, release zomer...">
     </div>
   </div>
+  </div>
+
+  <!-- Copy for other paths that need same doelen -->
+  <div class="branch" data-path="starten"><div class="card">
+    <div class="tag">Stap 5 — Doelen</div><h2>Wat wil je bereiken? 🏆</h2><p class="sub">Kies je belangrijkste doel.</p>
+    <div class="field"><label>Mijn #1 doel is...</label><div class="options" data-name="doel"><div class="option" data-value="geld" onclick="pickOpt(this)"><span class="o-icon">💰</span><span class="o-text">Meer verdienen / kosten besparen</span></div><div class="option" data-value="tijd" onclick="pickOpt(this)"><span class="o-icon">⏰</span><span class="o-text">Tijd besparen / efficiënter</span></div><div class="option" data-value="groei" onclick="pickOpt(this)"><span class="o-icon">🚀</span><span class="o-text">Groeien / opschalen</span></div><div class="option" data-value="pro" onclick="pickOpt(this)"><span class="o-icon">✨</span><span class="o-text">Professioneler / moderner</span></div><div class="option" data-value="rust" onclick="pickOpt(this)"><span class="o-icon">🧘</span><span class="o-text">Rust / overzicht / controle</span></div><div class="option" data-value="starten" onclick="pickOpt(this)"><span class="o-icon">🏁</span><span class="o-text">Gewoon starten / eerste stap</span></div></div></div>
+    <div class="field"><label>Hoe weet je of het gelukt is?</label><div class="chips" data-name="succes" data-multi="true"><div class="chip">📈 Meer klanten/bereik</div><div class="chip">💰 Meer omzet</div><div class="chip">⏰ Uren bespaard</div><div class="chip">😌 Minder stress</div><div class="chip">⭐ Betere reviews/feedback</div><div class="chip">📱 Klanten zijn fan</div><div class="chip">🧠 Meer kennis/inzicht</div><div class="chip">🏁 Het draait gewoon</div></div></div>
+    <div class="field"><label>Wanneer wil je resultaat zien?</label><div class="chips" data-name="wanneer"><div class="chip">🔥 Zo snel mogelijk</div><div class="chip">📅 1-2 maanden</div><div class="chip">🗓️ 3-6 maanden</div><div class="chip">🧘 Geen haast</div></div></div>
+    <div class="field"><label>Harde deadline? (optioneel)</label><input type="text" name="deadline" placeholder="Bijv: 1 juni opening, belastingaangifte april, release zomer..."></div>
+  </div></div>
+  <div class="branch" data-path="probleem"><div class="card"><div class="tag">Stap 5 — Doelen</div><h2>Wat wil je bereiken? 🏆</h2><p class="sub">Kies je belangrijkste doel.</p><div class="field"><label>Mijn #1 doel is...</label><div class="options" data-name="doel"><div class="option" data-value="geld" onclick="pickOpt(this)"><span class="o-icon">💰</span><span class="o-text">Meer verdienen / kosten besparen</span></div><div class="option" data-value="tijd" onclick="pickOpt(this)"><span class="o-icon">⏰</span><span class="o-text">Tijd besparen / efficiënter</span></div><div class="option" data-value="groei" onclick="pickOpt(this)"><span class="o-icon">🚀</span><span class="o-text">Groeien / opschalen</span></div><div class="option" data-value="pro" onclick="pickOpt(this)"><span class="o-icon">✨</span><span class="o-text">Professioneler / moderner</span></div><div class="option" data-value="rust" onclick="pickOpt(this)"><span class="o-icon">🧘</span><span class="o-text">Rust / overzicht / controle</span></div><div class="option" data-value="starten" onclick="pickOpt(this)"><span class="o-icon">🏁</span><span class="o-text">Gewoon starten / eerste stap</span></div></div></div><div class="field"><label>Hoe weet je of het gelukt is?</label><div class="chips" data-name="succes" data-multi="true"><div class="chip">📈 Meer klanten/bereik</div><div class="chip">💰 Meer omzet</div><div class="chip">⏰ Uren bespaard</div><div class="chip">😌 Minder stress</div><div class="chip">⭐ Betere reviews/feedback</div><div class="chip">📱 Klanten zijn fan</div><div class="chip">🧠 Meer kennis/inzicht</div><div class="chip">🏁 Het draait gewoon</div></div></div><div class="field"><label>Wanneer wil je resultaat zien?</label><div class="chips" data-name="wanneer"><div class="chip">🔥 Zo snel mogelijk</div><div class="chip">📅 1-2 maanden</div><div class="chip">🗓️ 3-6 maanden</div><div class="chip">🧘 Geen haast</div></div></div><div class="field"><label>Harde deadline? (optioneel)</label><input type="text" name="deadline" placeholder="Bijv: 1 juni opening, belastingaangifte april, release zomer..."></div></div></div>
+  <div class="branch" data-path="creatief"><div class="card"><div class="tag">Stap 5 — Doelen</div><h2>Wat wil je bereiken? 🏆</h2><p class="sub">Kies je belangrijkste doel.</p><div class="field"><label>Mijn #1 doel is...</label><div class="options" data-name="doel"><div class="option" data-value="geld" onclick="pickOpt(this)"><span class="o-icon">💰</span><span class="o-text">Meer verdienen / kosten besparen</span></div><div class="option" data-value="tijd" onclick="pickOpt(this)"><span class="o-icon">⏰</span><span class="o-text">Tijd besparen / efficiënter</span></div><div class="option" data-value="groei" onclick="pickOpt(this)"><span class="o-icon">🚀</span><span class="o-text">Groeien / opschalen</span></div><div class="option" data-value="pro" onclick="pickOpt(this)"><span class="o-icon">✨</span><span class="o-text">Professioneler / moderner</span></div><div class="option" data-value="rust" onclick="pickOpt(this)"><span class="o-icon">🧘</span><span class="o-text">Rust / overzicht / controle</span></div><div class="option" data-value="starten" onclick="pickOpt(this)"><span class="o-icon">🏁</span><span class="o-text">Gewoon starten / eerste stap</span></div></div></div><div class="field"><label>Hoe weet je of het gelukt is?</label><div class="chips" data-name="succes" data-multi="true"><div class="chip">📈 Meer klanten/bereik</div><div class="chip">💰 Meer omzet</div><div class="chip">⏰ Uren bespaard</div><div class="chip">😌 Minder stress</div><div class="chip">⭐ Betere reviews/feedback</div><div class="chip">📱 Klanten zijn fan</div><div class="chip">🧠 Meer kennis/inzicht</div><div class="chip">🏁 Het draait gewoon</div></div></div><div class="field"><label>Wanneer wil je resultaat zien?</label><div class="chips" data-name="wanneer"><div class="chip">🔥 Zo snel mogelijk</div><div class="chip">📅 1-2 maanden</div><div class="chip">🗓️ 3-6 maanden</div><div class="chip">🧘 Geen haast</div></div></div><div class="field"><label>Harde deadline? (optioneel)</label><input type="text" name="deadline" placeholder="Bijv: 1 juni opening, belastingaangifte april, release zomer..."></div></div></div>
+  <div class="branch" data-path="groei"><div class="card"><div class="tag">Stap 5 — Doelen</div><h2>Wat wil je bereiken? 🏆</h2><p class="sub">Kies je belangrijkste doel.</p><div class="field"><label>Mijn #1 doel is...</label><div class="options" data-name="doel"><div class="option" data-value="geld" onclick="pickOpt(this)"><span class="o-icon">💰</span><span class="o-text">Meer verdienen / kosten besparen</span></div><div class="option" data-value="tijd" onclick="pickOpt(this)"><span class="o-icon">⏰</span><span class="o-text">Tijd besparen / efficiënter</span></div><div class="option" data-value="groei" onclick="pickOpt(this)"><span class="o-icon">🚀</span><span class="o-text">Groeien / opschalen</span></div><div class="option" data-value="pro" onclick="pickOpt(this)"><span class="o-icon">✨</span><span class="o-text">Professioneler / moderner</span></div><div class="option" data-value="rust" onclick="pickOpt(this)"><span class="o-icon">🧘</span><span class="o-text">Rust / overzicht / controle</span></div><div class="option" data-value="starten" onclick="pickOpt(this)"><span class="o-icon">🏁</span><span class="o-text">Gewoon starten / eerste stap</span></div></div></div><div class="field"><label>Hoe weet je of het gelukt is?</label><div class="chips" data-name="succes" data-multi="true"><div class="chip">📈 Meer klanten/bereik</div><div class="chip">💰 Meer omzet</div><div class="chip">⏰ Uren bespaard</div><div class="chip">😌 Minder stress</div><div class="chip">⭐ Betere reviews/feedback</div><div class="chip">📱 Klanten zijn fan</div><div class="chip">🧠 Meer kennis/inzicht</div><div class="chip">🏁 Het draait gewoon</div></div></div><div class="field"><label>Wanneer wil je resultaat zien?</label><div class="chips" data-name="wanneer"><div class="chip">🔥 Zo snel mogelijk</div><div class="chip">📅 1-2 maanden</div><div class="chip">🗓️ 3-6 maanden</div><div class="chip">🧘 Geen haast</div></div></div><div class="field"><label>Harde deadline? (optioneel)</label><input type="text" name="deadline" placeholder="Bijv: 1 juni opening, belastingaangifte april, release zomer..."></div></div></div>
+  <div class="branch" data-path="ontdek"><div class="card"><div class="tag">Stap 5 — Doelen</div><h2>Wat wil je bereiken? 🏆</h2><p class="sub">Kies je belangrijkste doel.</p><div class="field"><label>Mijn #1 doel is...</label><div class="options" data-name="doel"><div class="option" data-value="geld" onclick="pickOpt(this)"><span class="o-icon">💰</span><span class="o-text">Meer verdienen / kosten besparen</span></div><div class="option" data-value="tijd" onclick="pickOpt(this)"><span class="o-icon">⏰</span><span class="o-text">Tijd besparen / efficiënter</span></div><div class="option" data-value="groei" onclick="pickOpt(this)"><span class="o-icon">🚀</span><span class="o-text">Groeien / opschalen</span></div><div class="option" data-value="pro" onclick="pickOpt(this)"><span class="o-icon">✨</span><span class="o-text">Professioneler / moderner</span></div><div class="option" data-value="rust" onclick="pickOpt(this)"><span class="o-icon">🧘</span><span class="o-text">Rust / overzicht / controle</span></div><div class="option" data-value="starten" onclick="pickOpt(this)"><span class="o-icon">🏁</span><span class="o-text">Gewoon starten / eerste stap</span></div></div></div><div class="field"><label>Hoe weet je of het gelukt is?</label><div class="chips" data-name="succes" data-multi="true"><div class="chip">📈 Meer klanten/bereik</div><div class="chip">💰 Meer omzet</div><div class="chip">⏰ Uren bespaard</div><div class="chip">😌 Minder stress</div><div class="chip">⭐ Betere reviews/feedback</div><div class="chip">📱 Klanten zijn fan</div><div class="chip">🧠 Meer kennis/inzicht</div><div class="chip">🏁 Het draait gewoon</div></div></div><div class="field"><label>Wanneer wil je resultaat zien?</label><div class="chips" data-name="wanneer"><div class="chip">🔥 Zo snel mogelijk</div><div class="chip">📅 1-2 maanden</div><div class="chip">🗓️ 3-6 maanden</div><div class="chip">🧘 Geen haast</div></div></div><div class="field"><label>Harde deadline? (optioneel)</label><input type="text" name="deadline" placeholder="Bijv: 1 juni opening, belastingaangifte april, release zomer..."></div></div></div>
+
+  <!-- GEEN PATH - soft discovery -->
+  <div class="branch" data-path="geen">
+    <div class="card">
+      <div class="tag">Stap 5 — Dromen</div>
+      <h2>Welke situatie zou jouw leven mooier maken? ✨</h2>
+      <p class="sub">Geen verplichtingen — puur <em>"wat als..."</em></p>
+
+      <div class="field"><label>Wat zou je leven beter maken?</label>
+        <div class="chips" data-name="geen_droom" data-multi="true">
+          <div class="chip">🔨 Van mijn huidige werk een eigen bedrijf maken</div>
+          <div class="chip">🎓 Makkelijker mijn studie afronden</div>
+          <div class="chip">💰 Meer verdienen met wat ik al doe</div>
+          <div class="chip">⏰ Meer vrije tijd</div>
+          <div class="chip">🧘 Minder stress / meer rust</div>
+          <div class="chip">📱 Minder gedoe met apps en systemen</div>
+          <div class="chip">📋 Minder administratie</div>
+          <div class="chip">🌍 Locatie-onafhankelijk werken</div>
+          <div class="chip">🧠 Iets nieuws leren</div>
+          <div class="chip">🤷 Weet ik eigenlijk niet</div>
+        </div>
+      </div>
+
+      <div class="field"><label>Als iemand je kon helpen met één ding — wat zou je kiezen?</label>
+        <div class="options" data-name="geen_hulp">
+          <div class="option" data-value="geld" onclick="pickOpt(this)"><span class="o-icon">💰</span><span class="o-text">Financieel advies of overzicht</span></div>
+          <div class="option" data-value="werk" onclick="pickOpt(this)"><span class="o-icon">🔨</span><span class="o-text">Hulp met mijn werk of carrière</span></div>
+          <div class="option" data-value="tech" onclick="pickOpt(this)"><span class="o-icon">📱</span><span class="o-text">Iets technisch dat ik niet snap</span></div>
+          <div class="option" data-value="plan" onclick="pickOpt(this)"><span class="o-icon">📋</span><span class="o-text">Een plan of structuur maken</span></div>
+          <div class="option" data-value="niks" onclick="pickOpt(this)"><span class="o-icon">😌</span><span class="o-text">Eigenlijk niks — het gaat prima</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="nav">
     <button class="btn btn-back" onclick="goTo(4)">← Terug</button>
-    <button class="btn btn-next" onclick="goTo(6)">Verder →</button>
+    <button class="btn btn-next" onclick="goTo(userPath==='geen'?7:6)">Verder →</button>
   </div>
 </div>
 
@@ -895,7 +1071,7 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
 
   <div class="final-btns">
     <button class="btn btn-send" onclick="submit()">✉️ Verstuur</button><br>
-    <button class="btn btn-back" onclick="goTo(6)">← Terug</button>
+    <button class="btn btn-back" onclick="goTo(userPath==='geen'?5:6)">← Terug</button>
     <div id="copyWrap" style="display:none">
       <button class="copy-btn" onclick="copyAll()">📋 Kopieer als tekst</button>
       <div id="copyFb">✓ Gekopieerd!</div>
@@ -948,8 +1124,16 @@ function goTo(s){
   const t=document.querySelector(`.step[data-step="${s}"]`);
   if(t){void t.offsetWidth;t.classList.add('active');}
   cur=s;
-  document.getElementById('pFill').style.width=((s/TOTAL)*100)+'%';
-  document.getElementById('pLabel').textContent=`${s} / ${TOTAL}`;
+  // For geen path: show 5 steps instead of 7 (skip 5+6)
+  if(userPath==='geen'){
+    const geenMap={1:1,2:2,3:3,4:4,5:5,7:6};
+    const geenStep=geenMap[s]||s;
+    document.getElementById('pFill').style.width=((geenStep/6)*100)+'%';
+    document.getElementById('pLabel').textContent=`${geenStep} / 6`;
+  } else {
+    document.getElementById('pFill').style.width=((s/TOTAL)*100)+'%';
+    document.getElementById('pLabel').textContent=`${s} / ${TOTAL}`;
+  }
   document.getElementById('pName').textContent=names[s-1];
   window.scrollTo(0,0);
   if(s>=3)showBranches();
@@ -967,6 +1151,41 @@ function showBranches(){
   if(userPath){
     document.querySelectorAll(`.branch[data-path="${userPath}"]`).forEach(b=>b.classList.add('show'));
   }
+  updateProfessionLabels();
+}
+
+function getVak(){
+  const chips=[...document.querySelectorAll('[data-name="vak"] .chip.selected')];
+  if(!chips.length)return null;
+  // Get the first selected profession, cleaned
+  const raw=chips[0].textContent.replace('✓ ','').trim();
+  // Strip emoji
+  return raw.replace(/^[^\w\s]+\s*/,'').trim();
+}
+
+function updateProfessionLabels(){
+  const vak=getVak();
+  if(!vak)return;
+  const vakLower=vak.toLowerCase();
+  
+  // Geen path: update tool labels
+  const tl=document.getElementById('geen_tools_label');
+  if(tl)tl.textContent=`Gebruik je software of apps voor je werk als ${vakLower}?`;
+  const th=document.getElementById('geen_tools_hint');
+  if(th)th.textContent=`Denk aan: boekingssysteem, planning, administratie, kassa — alles wat je gebruikt als ${vakLower}`;
+  
+  // Starten path: update header and chip
+  const sh=document.getElementById('start_h2');
+  if(sh&&(vakLower.includes('bouw')||vakLower.includes('techniek')||vakLower.includes('dakdek')))
+    sh.textContent='Van vakman naar ondernemer 🚀';
+  else if(sh&&vakLower.includes('kapper'))
+    sh.textContent='Je eigen salon starten 🚀';
+  
+  const sc=document.getElementById('start_vak_chip');
+  if(sc)sc.textContent='🔨 Mijn eigen '+vakLower+' bedrijf starten';
+  
+  const sl=document.getElementById('start_werk_label');
+  if(sl)sl.textContent=`Waar werk je nu als ${vakLower}?`;
 }
 
 // CHIPS
@@ -1031,15 +1250,15 @@ function buildSummary(){
   
   // Group nicely
   const groups=[
-    {t:'👤 Contact',k:['naam','telefoon','email','bedrijf','vak','een_ding','gedoe']},
+    {t:'👤 Contact',k:['naam','telefoon','email','bedrijf','vak','leeftijd','vrije_tijd','een_ding','gedoe']},
     {t:'🖥️ Huidige software',k:['sw_tools','sw_duur','sw_kosten','sw_werkt','sw_klant_feedback','sw_klant_easy']},
     {t:'😤 Frustraties',k:['sw_frustratie','sw_problemen','sw_missend']},
-    {t:'🚀 Starten',k:['start_wat','start_huidig_werk','start_skill_level','start_naast_werk','start_inkomen','start_blokkades','start_klanten','start_drive','start_kracht','start_hulp','start_droom']},
-    {t:'🔧 Probleem',k:['prob_type','prob_beschrijving','prob_duur','prob_geprobeerd','prob_tech','prob_urgentie','prob_financieel','prob_deadline','prob_oplossing']},
-    {t:'🎨 Creatief',k:['cr_type','cr_pijn','cr_kosten','cr_kosten_waar','cr_bereikt','cr_urgentie','cr_top_frustratie','cr_hulp']},
+    {t:'🚀 Starten',k:['start_wat','start_huidig_werk','start_skill_level','start_ervaring','start_naast_werk','start_inkomen','start_blokkades','start_klanten','start_drive','start_kracht','start_bijverdienste','start_startkapitaal','start_doel_inkomen','start_hulp','start_droom']},
+    {t:'🔧 Probleem',k:['prob_type','prob_beschrijving','prob_duur','prob_geprobeerd','prob_professional','prob_bedragen','prob_data','prob_tech','prob_urgentie','prob_financieel','prob_deadline','prob_oplossing']},
+    {t:'🎨 Creatief',k:['cr_type','cr_pijn','cr_kosten','cr_kosten_waar','cr_bereikt','cr_releases','cr_platformen','cr_genre','cr_productie','cr_mix_kosten','cr_urgentie','cr_top_frustratie','cr_hulp']},
     {t:'📈 Groei',k:['gr_leeftijd','gr_remmers','gr_geprobeerd','gr_imp_tijd','gr_imp_geld','gr_imp_stress','gr_imp_groei','gr_concurrent']},
-    {t:'💬 Ontdekken',k:['ontd_interesse','ontd_pijn','ontd_studie','ontd_irritatie','ontd_bouwen','ontd_ai']},
-    {t:'🤝 Over jou',k:['geen_dag','geen_apps','geen_tech','geen_tijdkwijt','geen_irritatie','geen_toverstaf']},
+    {t:'💬 Ontdekken',k:['ontd_interesse','ontd_pijn','ontd_studie','ontd_studie_fase','ontd_tijdbesteding','ontd_irritatie','ontd_bouwen','ontd_ai']},
+    {t:'🤝 Over jou',k:['geen_dag','geen_werk_tools','geen_tool_naam','geen_tools_tevreden','geen_tech','geen_tijdkwijt','geen_irritatie','geen_toverstaf','geen_droom','geen_hulp']},
     {t:'🏆 Doelen',k:['doel','succes','wanneer','deadline']},
     {t:'📋 Praktisch',k:['budget','tech_level','zorgen','bestaand','contact','overig']},
   ];
