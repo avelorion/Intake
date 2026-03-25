@@ -107,7 +107,7 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
 
 <div class="header">
   <div class="badge">💬 Discovery Intake</div>
-  <div style="font-size:10px;color:var(--accent);font-weight:700;margin-bottom:6px;">⚡ v4.6</div>
+  <div style="font-size:10px;color:var(--accent);font-weight:700;margin-bottom:6px;">⚡ v4.7</div>
   <h1>Vertel ons je verhaal.</h1>
   <p>We passen ons aan op jouw situatie. Vooral tikken, bijna niet typen. ±5 minuten.</p>
 </div>
@@ -319,32 +319,47 @@ textarea{min-height:64px;resize:vertical;line-height:1.5;}
 
       <div class="field"><label>Wat wil je starten?</label>
         <div class="chips" data-name="start_wat" data-multi="true">
-          <div class="chip">🏢 Eigen bedrijf</div><div class="chip">📦 Freelancen</div><div class="chip">🌐 Online business</div>
+          <div class="chip">🔨 Mijn huidige vak, maar voor mezelf</div>
+          <div class="chip">🏢 Eigen bedrijf (ander vak)</div><div class="chip">📦 Freelancen / ZZP</div><div class="chip">🌐 Online business</div>
           <div class="chip">📱 App / platform</div><div class="chip">🛒 Webshop</div><div class="chip">🎨 Creatief project</div>
           <div class="chip">💡 Weet nog niet precies</div>
         </div>
       </div>
       <div class="field"><label>Wat doe je nu voor werk?</label>
-        <input type="text" name="start_huidig_werk" placeholder="Bijv: dakdekker in loondienst">
+        <input type="text" name="start_huidig_werk" placeholder="Bijv: dakdekker in loondienst, kapper bij een salon...">
+      </div>
+      <div class="field"><label>Hoe goed ben je in wat je doet?</label>
+        <div class="chips" data-name="start_skill_level">
+          <div class="chip">🌱 Beginnend</div><div class="chip">👍 Goed</div>
+          <div class="chip">💪 Zeer goed</div><div class="chip">🏆 Een van de besten</div>
+        </div>
       </div>
       <div class="field"><label>Doe je er nu al iets mee naast je werk?</label>
         <div class="chips" data-name="start_naast_werk">
-          <div class="chip">🌙 Ja, in weekenden/avonden</div><div class="chip">📝 Ja, aan het plannen</div>
-          <div class="chip">💭 Nee, alleen in mijn hoofd</div><div class="chip">🚫 Nee, helemaal niet</div>
+          <div class="chip">🌙 Ja, weekenden/avonden</div><div class="chip">📝 Ja, aan het plannen</div>
+          <div class="chip">💭 Alleen in mijn hoofd</div><div class="chip">🚫 Nee, helemaal niet</div>
+        </div>
+      </div>
+      <div class="field"><label>Wat verdien je nu (ongeveer)?</label>
+        <div class="chips" data-name="start_inkomen">
+          <div class="chip">< €2.000/mnd</div><div class="chip">€2.000-3.000</div>
+          <div class="chip">€3.000-4.500</div><div class="chip">€4.500+</div>
+          <div class="chip">Zeg ik liever niet</div>
         </div>
       </div>
       <div class="field"><label>Wat houdt je tegen? (tik alles aan)</label>
         <div class="chips" data-name="start_blokkades" data-multi="true">
-          <div class="chip">💸 Niet genoeg geld om te starten</div>
           <div class="chip">👥 Niet genoeg klanten / zekerheid</div>
           <div class="chip">😰 Bang voor risico's</div>
+          <div class="chip">💸 Niet genoeg geld om te starten</div>
           <div class="chip">📋 Verzekeringen / administratie</div>
           <div class="chip">🏢 Risico voor huidige werkgever</div>
-          <div class="chip">🤷 Weet niet hoe te beginnen</div>
           <div class="chip">📢 Durft niet te werven / verkopen</div>
+          <div class="chip">🤷 Weet niet hoe te beginnen</div>
           <div class="chip">⏰ Geen tijd</div>
           <div class="chip">🧠 Twijfel aan mezelf</div>
           <div class="chip">📱 Geen online aanwezigheid</div>
+          <div class="chip">💰 Kan huidige inkomen niet missen</div>
         </div>
       </div>
       <div class="field"><label>Heb je al klanten of opdrachten?</label>
@@ -1019,7 +1034,7 @@ function buildSummary(){
     {t:'👤 Contact',k:['naam','telefoon','email','bedrijf','vak','een_ding','gedoe']},
     {t:'🖥️ Huidige software',k:['sw_tools','sw_duur','sw_kosten','sw_werkt','sw_klant_feedback','sw_klant_easy']},
     {t:'😤 Frustraties',k:['sw_frustratie','sw_problemen','sw_missend']},
-    {t:'🚀 Starten',k:['start_wat','start_huidig_werk','start_naast_werk','start_blokkades','start_klanten','start_drive','start_kracht','start_hulp','start_droom']},
+    {t:'🚀 Starten',k:['start_wat','start_huidig_werk','start_skill_level','start_naast_werk','start_inkomen','start_blokkades','start_klanten','start_drive','start_kracht','start_hulp','start_droom']},
     {t:'🔧 Probleem',k:['prob_type','prob_beschrijving','prob_duur','prob_geprobeerd','prob_tech','prob_urgentie','prob_financieel','prob_deadline','prob_oplossing']},
     {t:'🎨 Creatief',k:['cr_type','cr_pijn','cr_kosten','cr_kosten_waar','cr_bereikt','cr_urgentie','cr_top_frustratie','cr_hulp']},
     {t:'📈 Groei',k:['gr_leeftijd','gr_remmers','gr_geprobeerd','gr_imp_tijd','gr_imp_geld','gr_imp_stress','gr_imp_groei','gr_concurrent']},
